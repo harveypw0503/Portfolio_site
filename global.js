@@ -7,7 +7,7 @@ function initNavbar() {
     return;
   }
 
-  fetch('/navbar.html')
+  fetch('navbar.html')
     .then(res => res.text())
     .then(html => {
       navbarContainer.innerHTML = html;
@@ -29,3 +29,4 @@ function initNavbar() {
 }
 
 document.addEventListener('DOMContentLoaded', initNavbar);
+
