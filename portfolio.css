@@ -1,0 +1,408 @@
+/* =========================================================
+   PORTFOLIO.CSS — Royal Neon Purple UI Theme
+   ========================================================= */
+
+/* ----- BRAND COLORS ----- */
+
+:root {
+  --purple-1: #7f34ff;
+  --purple-2: #b27aff;
+  --bg-dark: #0f0d17;
+  --text-main: #f6f0ff;
+  --text-muted: #c9bfd4;
+}
+
+/* ----- GLOBAL PAGE LOOK ----- */
+
+body {
+  background: radial-gradient(circle at top right, #1a1330, #0f0d17 70%);
+  background-attachment: fixed;
+  color: var(--text-main);
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+}
+
+/* Floating glow */
+body::before {
+  content: "";
+  position: fixed;
+  left: 50%;
+  top: 20%;
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, rgba(127, 52, 255, 0.18), transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  filter: blur(80px);
+}
+
+/* Sections */
+.section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 70px 20px;
+}
+
+/* ----- HEADINGS ----- */
+
+.header-main {
+  font-size: 3rem;
+  text-align: center;
+  font-weight: 800;
+  color: var(--purple-2);
+  margin-bottom: 25px;
+}
+
+.header-sub {
+  text-align: center;
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  margin-bottom: 55px;
+}
+
+/* ----- BUTTONS ----- */
+
+.button1,
+.button2 {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.18s ease;
+}
+
+/* Primary */
+.button1 {
+  background: var(--purple-1);
+  color: white;
+  border: none;
+}
+.button1:hover {
+  opacity: .85;
+  transform: translateY(-2px);
+}
+
+/* Secondary (outline) */
+.button2 {
+  background: transparent;
+  border: 2px solid var(--purple-1);
+  color: var(--purple-1);
+}
+.button2:hover {
+  background: rgba(127, 52, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+/* ----- PROJECT GRID ----- */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 30px;
+}
+
+/* ----- PROJECT CARD ----- */
+
+.project-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 24px;
+  border-radius: 15px;
+  transition: 0.25s ease;
+}
+.project-card:hover {
+  border-color: var(--purple-1);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-4px);
+}
+
+/* ----- CARD TEXT ----- */
+
+.project-title {
+  font-size: 1.35rem;
+  margin-bottom: 12px;
+  color: var(--purple-2);
+  font-weight: 700;
+}
+
+.project-desc {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+/* ----- FOOTER ----- */
+
+.footer {
+  text-align: center;
+  padding: 40px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ----- RESPONSIVE ----- */
+
+@media (max-width: 768px) {
+  .header-main {
+    font-size: 2.3rem;
+  }
+  .section {
+    padding: 50px 18px;
+  }
+}
+
+
+/* =========================================================
+   HERO SECTION — Universal Landing Page Hero
+   ========================================================= */
+
+.hero {
+  position: relative;
+  text-align: center;
+  padding-top: 140px;
+  padding-bottom: 140px;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: auto;
+}
+
+.hero-text {
+  color: var(--text-muted);
+  font-size: 1.15rem;
+  margin: 25px auto 40px auto;
+  max-width: 650px;
+  line-height: 1.7;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+/* Soft glow behind hero */
+.hero-glow {
+  position: absolute;
+  width: 1000px;
+  height: 1000px;
+  top: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(127, 52, 255, 0.25), transparent 70%);
+  filter: blur(120px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.section-desc {
+  text-align: center;
+  max-width: 700px;
+  margin: -15px auto 45px; /* pulls it closer to heading, adds space before grid */
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+.project-subhead {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 6px 0 14px 0;
+  color: var(--accent); /* uses your neon purple theme */
+  letter-spacing: 0.4px;
+  text-transform: none;
+}
+
+/* CONTACT PAGE LAYOUT */
+.contact-page {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.contact-hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact-hero h1 {
+  font-size: 2.6rem;
+  margin-bottom: 10px;
+}
+
+.contact-hero p {
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+/* TWO-COLUMN LAYOUT */
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+@media (max-width: 800px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* CARDS (matching project-card aesthetic) */
+.contact-form,
+.contact-info {
+  background: var(--card-bg, #ffffff10);
+  backdrop-filter: blur(6px);
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 4px 8px #00000015;
+  border: 1px solid #ffffff0a;
+}
+
+/* HEADERS */
+.contact-form h2,
+.contact-info h2 {
+  margin-bottom: 15px;
+}
+
+/* FORM STYLES */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+  opacity: 0.85;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ffffff22;
+  background: #ffffff06;
+  color: var(--text-color, #fff);
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent, #4da3ff);
+  background: #ffffff14;
+  box-shadow: 0 0 0 2px var(--accent, #4da3ff2a);
+}
+
+.contact-form button:hover {
+  background: var(--accent-hover, #2d8ae6);
+}
+
+/* CONTACT INFO LINKS */
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.contact-info li {
+  margin: 8px 0;
+}
+
+.contact-info a {
+  color: var(--accent, #4da3ff);
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* ------- PORTFOLIO GRID ------- */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.portfolio-item {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #000;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .3s ease;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.06);
+}
+
+/* ------- ITEM OVERLAY ------- */
+.portfolio-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(to top, rgba(0,0,0,.75), transparent);
+  color: white;
+}
+
+.portfolio-overlay h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.portfolio-overlay p {
+  margin: 3px 0 0;
+  font-size: .9rem;
+  opacity: .9;
+}
+
+/* ------- MODAL LIGHTBOX ------- */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.85);
+  padding: 40px;
+  z-index: 999;
+  text-align: center;
+}
+
+#modal img {
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 10px;
+}
+
+#modal-close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+#modal-caption {
+  color: white;
+  margin-top: 20px;
+  font-size: 1.1rem;
+  opacity: .9;
+}

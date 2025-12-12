@@ -1,0 +1,119 @@
+/* =========================================================
+   GLOBAL.CSS — Universal Reset + Navbar System (Dark Purple)
+   ========================================================= */
+
+/* ----- RESET ----- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "Inter", sans-serif;
+  background: #0f0d17;
+  color: #f6f0ff;
+  min-height: 100%;
+}
+
+/* Needed for navbar injection */
+#navbar {
+  min-height: 70px;
+  display: block;
+}
+
+/* =========================================================
+   NAVBAR — Universal Styling
+   ========================================================= */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding: 0 20px;
+
+  background: rgba(20, 10, 40, 0.6);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(180, 120, 255, 0.15);
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo */
+.navbar .logo {
+  height: 45px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Desktop nav links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #f6f0ff;
+  font-weight: 500;
+  transition: opacity .2s;
+}
+
+.nav-links a:hover {
+  opacity: .6;
+}
+
+/* Hamburger */
+#hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #f6f0ff;
+}
+
+/* Container for right side */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* =========================================================
+   MOBILE NAVIGATION
+   ========================================================= */
+
+@media (max-width: 780px) {
+
+  #hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+
+    padding: 22px 0;
+    gap: 20px;
+
+    background: rgba(20, 10, 40, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(180, 120, 255, 0.15);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
